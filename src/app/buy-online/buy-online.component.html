@@ -1,0 +1,19 @@
+<div class="container">
+  <h1>Buy Steem Online In India</h1>
+  <div>
+    <table>
+      <tr>
+        <th>Seller</th>
+        <th>Payment Methods</th>
+        <th>Price/Steem</th>
+        <th>Limits</th>
+      </tr>
+      <tr *ngFor = "let buySteem of buyDetails | async">
+        <td>{{buySteem.seller}}</td>
+        <td>{{buySteem.Paymentmethod}}</td>
+        <td>{{buySteem.PricePerSteem}}</td>
+        <td>{{buySteem.limit}}</td>
+      </tr>
+    </table>
+  </div>
+</div>
