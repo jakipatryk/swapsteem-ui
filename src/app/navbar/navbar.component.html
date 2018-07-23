@@ -1,14 +1,20 @@
 <nav class="nav">
   <div class="nav container">
-      <a class="navbar-brand">SteemIt</a>
-      <a class="nav-link active color" href="#">Buy </a>
-      <a class="nav-link color" href="#">Sell </a>
-      <a class="nav-link color" href="#">Post a trade</a>
-      <a class="nav-link color" href="#">Help</a>
-      
+    <a class="navbar-brand">SteemIt</a>
+    <a class="nav-link active color" href="#">Buy </a>
+    <a class="nav-link color " href="# ">Sell </a>
+    <a class="nav-link color " href="# ">Post a trade</a>
+    <a class="nav-link color " href="# ">Help</a>
 
-      <div class="nav offset-sm-6">
-          <a class="nav-link signInLink" href="#">Sign In</a>
-      </div>
+
+    <div class="nav offset-sm-6 ">
+      <span *ngIf="(auth.authState | async); else guest ">
+        <button class="nav-link signInLink " (click)="auth.logout() ">Logout</button>
+      </span>
+    </div>
+
+    <ng-template #guest>
+      <button class="nav-link signInLink " (click)="auth.login() ">Login</button>
+    </ng-template>
   </div>
 </nav>
